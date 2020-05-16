@@ -1,0 +1,6 @@
+C:\Users\wakuto\source\repos\MySwitch\bin\Debug\MySwitch.exe.config
+C:\Users\wakuto\source\repos\MySwitch\bin\Debug\MySwitch.exe
+C:\Users\wakuto\source\repos\MySwitch\bin\Debug\MySwitch.pdb
+C:\Users\wakuto\source\repos\MySwitch\obj\Debug\MySwitch.csprojAssemblyReference.cache
+C:\Users\wakuto\source\repos\MySwitch\obj\Debug\MySwitch.exe
+C:\Users\wakuto\source\repos\MySwitch\obj\Debug\MySwitch.pdb
