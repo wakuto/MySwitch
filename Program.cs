@@ -10,7 +10,8 @@ class Program {
         int gengoIdx = new MySwitch<(string, string), int>(gengo)
                        .Case(("令和", "平成"), 0)
                        .Case(("昭和", "平成"), 1)
-                       .Case(("平成", "令和"), 2)
+                       .Case(("Heisei", "Reiwa"), 2)
+                       .Case(("平成", "令和"))
                        .Default(-1);
         Console.WriteLine($"{gengo}のインデックスは{gengoIdx}です。");
         Console.ReadLine();
@@ -26,6 +27,7 @@ class MySwitch<U, T> {
     // T:switchで返す値の型
     // U:switchで比較する型
     T res;
+    T prevNum;
     dynamic cmp = default(U);
     private bool match = false;
 
@@ -44,8 +46,23 @@ class MySwitch<U, T> {
             match = true;
             res = num;
         }
+        prevNum = num;
         return this;
     }
+
+    /// <summary>
+    /// case句のフォールスルー
+    /// 当てはまる場合の返り値は連続する条件のはじめに書く必要があります。
+    /// </summary>
+    /// <param name="targ">比較のラベル</param>
+    public MySwitch<U, T> Case(U targ) {
+        if(targ.Equals(cmp)) {
+            match = true;
+            res = prevNum;
+        }
+        return this;
+    }
+
     /// <summary>
     /// default句
     /// </summary>
